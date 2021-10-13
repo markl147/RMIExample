@@ -6,12 +6,12 @@ public class HouseClient {
         String url = "rmi:///"; //locally sourced objects do not need ip address
         System.out.println("Client has started");
         try {
-            HouseInterface h1 = (HouseInterface) Naming.lookup("ourBungalow");
+            HouseInterface h1 = (HouseInterface) Naming.lookup("bungalowHouse");
 
             String bungalowOwners = h1.getOwner();
             System.out.println("Owner of bungalow: " + bungalowOwners);
 
-            HouseInterface h2 = (HouseInterface) Naming.lookup("ourDormer");
+            HouseInterface h2 = (HouseInterface) Naming.lookup("dormerHouse");
             System.out.println("Owner of dormer: " + h2.getOwner());
         } catch (Exception e) {
             e.printStackTrace();
